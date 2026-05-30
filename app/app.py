@@ -5,11 +5,11 @@ import joblib
 # LOAD MODEL AND SCALER
 
 model = joblib.load(
-    "E:\ml assignment\diabetes_dataset_prediction\models/best_model_random_forest.pkl"
+    "models/best_model_random_forest.pkl"
 )
 
 scaler = joblib.load(
-    "E:\ml assignment\diabetes_dataset_prediction\models/scaler.pkl"
+    "models/scaler.pkl"
 )
 
 
