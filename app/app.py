@@ -2,10 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-
-# =========================
 # LOAD MODEL AND SCALER
-# =========================
 
 model = joblib.load(
     "E:\ml assignment\diabetes_dataset_prediction\models/best_model_random_forest.pkl"
@@ -16,9 +13,7 @@ scaler = joblib.load(
 )
 
 
-# =========================
 # PAGE TITLE
-# =========================
 
 st.title("Diabetes Prediction System")
 
@@ -26,10 +21,7 @@ st.write(
     "Enter patient health details below"
 )
 
-
-# =========================
 # USER INPUTS
-# =========================
 
 age = st.number_input(
 
@@ -125,9 +117,7 @@ if st.button("Predict"):
     })
 
 
-    # =========================
     # SCALE FEATURES
-    # =========================
 
     columns_to_scale = [
 
@@ -148,9 +138,8 @@ if st.button("Predict"):
     )
 
 
-    # =========================
     # EXTRACT SCALED VALUES
-    # =========================
+
 
     scaled_age = new_patient['age'][0]
 
@@ -161,9 +150,7 @@ if st.button("Predict"):
     scaled_glucose = new_patient['blood_glucose_level'][0]
 
 
-    # =========================
     # FEATURE ENGINEERING
-    # =========================
 
     # Risk Score
 
@@ -215,9 +202,7 @@ if st.button("Predict"):
     )
 
 
-    # =========================
     # FINAL MODEL INPUT
-    # =========================
 
     final_input = pd.DataFrame({
 
@@ -246,9 +231,7 @@ if st.button("Predict"):
     })
 
 
-    # =========================
     # PREDICTION
-    # =========================
 
     prediction = model.predict(
         final_input
@@ -260,9 +243,8 @@ if st.button("Predict"):
     )[0][1]
 
 
-    # =========================
     # OUTPUT
-    # =========================
+
 
     if prediction == 1:
 
