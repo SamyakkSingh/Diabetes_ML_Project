@@ -104,16 +104,13 @@ smoking_history = st.selectbox(
 )
 
 
-# =========================
 # PREDICTION BUTTON
-# =========================
 
 if st.button("Predict"):
 
 
-    # =========================
     # CREATE INPUT DATAFRAME
-    # =========================
+
 
     new_patient = pd.DataFrame({
 
@@ -278,10 +275,3 @@ if st.button("Predict"):
         st.success(
             "Patient is Non-Diabetic"
         )
-
-
-    st.write(
-
-        f"Diabetes Probability: {probability:.2f}"
-
-    )
